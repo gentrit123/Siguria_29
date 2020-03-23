@@ -1,4 +1,4 @@
-//Enkriptimi me komenden caesar ne gjuhen programuese c++
+//Enkriptimi me komanden caesar ne gjuhen programuese c++
 
 #include "stdafx.h"
 #include <iostream>
