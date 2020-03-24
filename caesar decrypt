@@ -28,3 +28,17 @@ string dekriptimi(string teksti,int qelesi)
     }
     return rezultati;
 }
+
+int main()
+{
+    string teksti = "";
+    cout<<"Shkruani tekstin  :   ";
+    getline(cin,teksti);
+    cout<<"Jepni qelesin  :   ";
+    int qelesi;
+    cin>>qelesi;
+    cout<<"Dekriptimi : "<<dekriptimi(teksti,qelesi)<<endl;
+    system("pause");
+    return 0;
+    
+}
