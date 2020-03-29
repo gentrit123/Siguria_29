@@ -10,5 +10,21 @@ class PermutationCipher:
         cipher = [int(item) for item in cipher]
         ciphertext = ciphertext.strip()
         if(choose_function.lower() == 'e'):
+            print(self.encrypt(cipher,ciphertext))
+        elif(choose_function.lower() == 'd'):
+            print(self.decrypt(cipher,ciphertext))
+        else:
+            print("Please try again!")
+            
+            
+    def decrypt(self,cipher, ciphertext):
+            
+          
+            
+            
+            
+            
+            
+        
         
 
