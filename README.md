@@ -5,6 +5,9 @@ CAESAR CIPHER
 2.Pershkrimi per secilen komande
 -Pershkrimi i komandeve per kodin e cezarit eshte bere brenda kodit me anen e komenteve qe te jete me qarte se per qfare eshte perdorur secila nga komandat.
 3.Rezultatet e ekzekutimit(I gjeni tek folderi images)
-3.1 Rezultatet e ekzekutimit te cesar encrypt(encriptimit me kodin e cezarit)
+3.1 Rezultatet e ekzekutimit te caesar encrypt(encriptimit me kodin e cezarit)
 ![](images/caesarencrypt.PNG)
-
+3.2 Rezlutatet e ekzekutimit te caesar decrypt
+![](images/caesardecrypt.PNG)
+3.3 Rezultatet e ekzekutimit te caesar brute-force
+![](images/caesarbruteforce.PNG)
