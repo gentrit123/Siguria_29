@@ -1,1 +1,24 @@
+#caesar brute-force me te cilen provohen te gjithe qelesat e mundeshem
+#Mesazhi i enkriptuar
+mesazhi = 'PERSHENDETJE NGA FIEK!'
+shkronjat = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+print("caesar brute-force")
+
+for qelesi in range(len(shkronjat)):
+   dekriptimi = ''
+   
+   for simboli in mesazhi:
+   
+      if simboli in shkronjat:
+         num = shkronjat.find(simboli)
+         num = num - qelesi
+         
+         if num < 0:
+            num = num + len(shkronjat)
+         dekriptimi += shkronjat[num]
+         
+      else:
+         dekriptimi += simboli
+   print('Qelesi #%s: %s' % (qelesi,dekriptimi))
 
