@@ -11,8 +11,10 @@ class BealsCipher:
             self.decoder()
         else:
             print("Please try again!")
+            
  #Ky funksion mundeson encodimin e plaintext-it
     def encoder(self):
+    
  #Futja e text file qe perdoret si qeles dhe te plaintext-it
         book = input("Enter text file to use as key:")
         word = input("Enter word to encode:")
@@ -20,6 +22,7 @@ class BealsCipher:
         f = open(book, "r")
         book_characters = list(f.read())
         word_characters = list(word)
+        
 #Kthimi i rezutatit te pozites se shkronjave permes nje array(vargu)
         output_array = []
         lastIdx = 0
@@ -36,6 +39,7 @@ class BealsCipher:
         for x in output_array:
             result += str(x) + " "
         print("Encoded word: " + result)
+        
 #Ky funksion na mundeson dekodimin me ane te komandes beale
 #Procedure e ngjashme me encodimin vetem e anasjellte
     def decoder(self):
