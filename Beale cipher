@@ -35,6 +35,26 @@ class BealsCipher:
         book = input("Enter text file to use as key:")
         word = input("Enter word to decode:")
         outArray = []
+        f = open(book, "r")
+        book_characters = list(f.read())
+        output_array = []
+        word_encoded = word.split(",")
+        print(book_characters)
+        for char in word_encoded:
+            print(book_characters[int(char)-1])
+            output_array.append(book_characters[int(char)-1])
+            
+        print(output_array)
+        
+BealsCipher()
+        
+ 
+        
+        
+            
+            
+        
+        
         
         
         
