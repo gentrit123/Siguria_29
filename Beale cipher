@@ -2,7 +2,7 @@ import sys
 import os
 
 class BealsCipher:
-#Ky funksion na mundeson te zgjedhim nese deshirojm te bejme enkodimin(nese zgjedhim e) apo dekodimin(nese zgjedhiim d) nese zgjedhim shkronje tjeter duhet tea provojm perseri
+#Funksion qe na mundeson te zgjedhim nese deshirojm te bejme enkodimin apo dekodimin 
     def __init__(self):
         choose_function = input("Enter e to encode or d to decode:")
         if(choose_function.lower() == 'e'):
