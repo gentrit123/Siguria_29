@@ -33,6 +33,13 @@ Pershkrimi i shkurte i komandave eshte bere brenda kodit me ane te komenteve.
 
 KOMANDA PERMUTATION
 1.Udhezime per ekzekutimin e programit
+-Ne fillim e krijojm nje folder te zbrazet, pastaj ne ate folder e vendosum fajllin e tipit python.Pastaj pasi e vendosum ne nje folder hym tek ai folder dhe e hapum nje command line ne kete folder.Pastaj i kemi disa hapa te ekzekutimit:
+1.Shenojm python, pastaj Enter.
+2.Shenojm quit(), pastaj Enter.
+3.Shenojm python emri_fajllitpython.py, pastaj Enter.
+5.Pastaj na shfaqet teksti nese deshirojme te encodojme apo decodojme, shtypim sipas deshires ose "e" ose "d", pastaj shtypim Enter.
+6.Shenojm nje permutacion qe e perdorum si qeles, pastaj Enter.
+7.Pastaj shenojme fjalen qe deshirojme ta kodojme, pastaj shtypim Enter, dhe ne fund na shfaqet fjala e koduar.
 -Komanda permutation e tarnsformon plaintekstin ne blloqe ,duke i ndare ato ne baze te nje permutacioni te caktuar.
 2.Pershkrimi i komandave
 -Pershkrimi i komandave eshte bere te kodi me ane te komenteve perkatese.
