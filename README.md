@@ -24,4 +24,15 @@ Pershkrimi i shkurte i komandave eshte bere brenda kodit me ane te komenteve.
 ![](images/beale_decrypt.PNG)
 
 
+KOMANDA PERMUTATION
+1.Udhezime per ekzekutimin e programit
+-Komanda permutation e tarnsformon plaintekstin ne blloqe ,duke i ndare ato ne baze te nje permutacioni te caktuar.
+2.Pershkrimi i komandave
+-Pershkrimi i komandave eshte bere te kodi me ane te komenteve perkatese.
+3.Rezultatet e ekzekutimit
+3.1 Rezultatet e enkriptimit me komanden permutation
+![](images/permutation_encrypt.PNG)
+3.2 Rezultatet e dekriptimit me komanden permutation
+![](images/permutation_decrypt.PNG)
+
 
