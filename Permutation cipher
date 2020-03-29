@@ -7,5 +7,8 @@ class PermutationCipher:
         cipher_input = input("Enter permutation to use as key:")
         ciphertext = input("Enter word to encode/decode:")
         cipher = list(str(cipher_input).strip())
+        cipher = [int(item) for item in cipher]
+        ciphertext = ciphertext.strip()
+        if(choose_function.lower() == 'e'):
         
 
