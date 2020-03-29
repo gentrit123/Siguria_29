@@ -2,6 +2,7 @@ import sys
 import os
 
 class BealsCipher:
+#Ky funksion na mundeson te zgjedhim nese deshirojm te bejme enkodimin(nese zgjedhim e) apo dekodimin(nese zgjedhiim d) nese zgjedhim shkronje tjeter duhet tea provojm perseri
     def __init__(self):
         choose_function = input("Enter e to encode or d to decode:")
         if(choose_function.lower() == 'e'):
@@ -10,14 +11,16 @@ class BealsCipher:
             self.decoder()
         else:
             print("Please try again!")
+ #Ky funksion mundeson encodimin e plaintext-it
     def encoder(self):
+ #Futja e text file qe perdoret si qeles dhe te plaintext-it
         book = input("Enter text file to use as key:")
         word = input("Enter word to encode:")
         outArray = []
         f = open(book, "r")
         book_characters = list(f.read())
         word_characters = list(word)
-        
+#Kthimi i rezutatit te pozites se shkronjave permes nje array(vargu)
         output_array = []
         lastIdx = 0
         for char in word_characters:
@@ -33,7 +36,8 @@ class BealsCipher:
         for x in output_array:
             result += str(x) + " "
         print("Encoded word: " + result)
-          
+#Ky funksion na mundeson dekodimin me ane te komandes beale
+#Procedure e ngjashme me encodimin vetem e anasjellte
     def decoder(self):
         book = input("Enter text file to use as key:")
         word = input("Enter word to decode:")
@@ -47,6 +51,7 @@ class BealsCipher:
         result = ""
         for x in output_array:
             result += x
+#Kthimi i plaintext-it pas dekodimit
         print("Decoded word: " + result)
         
 BealsCipher()
