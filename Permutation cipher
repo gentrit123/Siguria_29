@@ -18,6 +18,7 @@ class PermutationCipher:
             
             
     def decrypt(self,cipher, ciphertext):
+        ciphertext  = self.encrypt(self.inverse_key(cipher), ciphertext)
             
           
             
