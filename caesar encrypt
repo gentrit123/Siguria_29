@@ -1,54 +1,35 @@
-//Enkriptimi me komanden caesar ne gjuhen programuese c++
-
-#include "stdafx.h"
-#include <iostream>
-#include <string>
-using namespace std;
-
-//Krijojme nje funksioni me emrin enkriptimi me dy parametra
-
-string enkriptimi(string teksti,int qelesi)
-{
-    string rezultati="";
-    
-    //Kalojm tek secili karakter i tekstit me nje for loop
-    for(int i=0;i<teksti.length();i++)
-    {
-        //enkriptojme shkronjat e medha ku ne ASCII code fillojne nga 65
-        if(isupper(teksti[i]))
-           rezultati+= char(int(teksti[i]+qelesi-65)%26+65);
+#enkriptimi me caesar crypt ne gjuhen programuese python
+def enkriptimi(teksti,qelesi):
+  rezutati = ""
+  #kalimi neper secilin karakter te tekstit
+  for i in range(len(teksti)):
+     char = teksti[i]
+     
+     #Enkriptimi i shkronjjave te medha , ne ASCII code nga 65
+     if(char.isupper()):
+        rezultati += chr((ord(char) + qelesi-65) % 26 + 65)
+     
+     #Enkriptimi i shkronjave te vogla , ne ASCII code nga 97
+     elif(char.islower()):
+        rezultati += chr((ord(char) + qelesi - 97) % 26 + 97)
+     
+     #Enkriptimi i simboleve dhe nurave qe mbesin te njejte , ASCII 1-64
+     elif(char<chr(65)):
+        rezultati+=char
         
-        //enkriptojme shkronjat e vogla qe ne ASCII fillojne nga 97
-        else if(islower(teksti[i]))
-           rezultati+=char(int(teksti[i]+qelesi-97)%26+97);
-           
-        //Ne rast se kemi numra apo simbole mbeten te njejta
-        else if(teksti[i]<65)
-           rezultati+=teksti[i];
-           
-        else
-           rezultati+=" ";
-     }
-     return rezultati;
-}
-//Te dhenat qe merren nga klienti(perdoruesi)
-int main()
-{
-    string teksti = "";
-    cout<<"Shkruani tekstin  :   ";
-    getline(cin,teksti);
-    cout<<"Jepni qelesin  :  ";
-    int qelesi;
-    cin>>qelesi;
-    cout<<"Encriptimi : "<<enkriptimi(teksti,qelesi)<<endl;
-    system("pause");
-    return 0;
- }
+     #Ne rast se kemi hapsira ato perfillen
+     rezultati+=" "
+     
+  return rezultati
 
-//Mbarimi i enkriptimit
+#E japin tekstin dhe qelesi dhe e testojme funksionin
+teksti = "Pershendetje nga FIEK!"
+qelesi = 3
+print("Teksti qe do enkriptohet : " + teksti)
+print("Qelesi : " + str(qelesi))
+print ("Teksti i enkriptuar: " + enkriptimi(tekti,qelesi))
 
-//Dekriptimi me komanden caesar 
-
+     
 
 
 
