@@ -14,6 +14,13 @@ CAESAR CIPHER
 
 BEALE CIPHER
 1.Udhezime per ekzekutimin e programit
+-Ne fillim e krijojm nje folder te zbrazet, pastaj ne ate folder i vendosum fajllin e tipit text edhe ate te tipit python.Pastaj pasi i vendosum ne nje folder hym tek ai folder dhe e hapum nje command line ne kete folder.Pastaj i kemi disa hapa te ekzekutimit:
+1.Shenojm python, pastaj Enter.
+2.Shenojm quit(), pastaj Enter.
+3.Shenojm python emri_fajllitpython.py, pastaj Enter.
+5.Pastaj na shfaqet teksti nese deshirojme te encodojme apo decodojme, shtypim sipas deshires ose "e" ose "d", pastaj shtypim Enter.
+6.Shenojm text file si qeles, pastaj Enter.
+7.Pastaj shenojme fjalen qe deshirojme ta kodojme, pastaj shtypim Enter, dhe ne fund na shfaqet fjala e koduar.
 -Beale cipher perdoret per kodimin e nje teksti duke u bazuar ne poziten e atyre shkronjave te tekstit ne nje dokument tjeter(ne rastin tone ne nje tekst file).
 2.Pershkrimi i komandave
 Pershkrimi i shkurte i komandave eshte bere brenda kodit me ane te komenteve.
