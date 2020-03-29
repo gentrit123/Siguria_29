@@ -30,9 +30,10 @@ KOMANDA PERMUTATION
 2.Pershkrimi i komandave
 -Pershkrimi i komandave eshte bere te kodi me ane te komenteve perkatese.
 3.Rezultatet e ekzekutimit
-3.1 Rezultatet e enkriptimit me komanden permutation
+3.1 Rezultatet e enkriptimit me komanden permutation(2 shembuj)
 ![](images/permutation_encrypt.PNG)
-3.2 Rezultatet e dekriptimit me komanden permutation
+![](images/permutation_encrypt2.PNG)
+3.2 Rezultatet e dekriptimit me komanden permutation(2 shembuj)
 ![](images/permutation_decrypt.PNG)
-
+![](images/permutation_decrypt2.PNG)
 
