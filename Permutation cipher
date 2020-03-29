@@ -3,12 +3,16 @@ import os
 
 class PermutationCipher:
     def __init__(self):
+#Vendosim permutacionin dhe fjalen per enkodim
+
         choose_function = input("Enter e to encode or d to decode:")
         cipher_input = input("Enter permutation to use as key:")
         ciphertext = input("Enter word to encode/decode:")
         cipher = list(str(cipher_input).strip())
         cipher = [int(item) for item in cipher]
         ciphertext = ciphertext.strip()
+        
+#choose_function na mundeson zgjedhjen per ekriptim(e) apo dekriptim(d)
         if(choose_function.lower() == 'e'):
             print(self.encrypt(cipher,ciphertext))
         elif(choose_function.lower() == 'd'):
@@ -16,11 +20,12 @@ class PermutationCipher:
         else:
             print("Please try again!")
             
-            
+#Funkdion per dekriptim            
     def decrypt(self,cipher, ciphertext):
         ciphertext  = self.encrypt(self.inverse_key(cipher), ciphertext)
         return ciphertext[:-1]
         
+#Funksioni per enkriptim te plaintext-it
     def encrypt(self,cipher, plaintext):
     
         plaintext="".join(plaintext.split(" ")).lower()
@@ -33,6 +38,7 @@ class PermutationCipher:
             ciphertext += " "
         return ciphertext[:-1]
         
+#Funksioni qe mundeson kthimin invers te qelesit ,perdoret per dekriptim      
     def inverse_key(self,cipher):
         inverse = []
         for position in range(min(cipher),max(cipher)+1,1):
