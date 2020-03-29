@@ -1,6 +1,6 @@
 #enkriptimi me caesar crypt ne gjuhen programuese python
 def enkriptimi(teksti,qelesi):
-  rezutati = ""
+  rezultati = ""
   #kalimi neper secilin karakter te tekstit
   for i in range(len(teksti)):
      char = teksti[i]
@@ -18,7 +18,8 @@ def enkriptimi(teksti,qelesi):
         rezultati+=char
         
      #Ne rast se kemi hapsira ato perfillen
-     rezultati+=" "
+     else:
+        rezultati+=" "
      
   return rezultati
 
