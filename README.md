@@ -18,5 +18,10 @@ BEALE CIPHER
 2.Pershkrimi i komandave
 Pershkrimi i shkurte i komandave eshte bere brenda kodit me ane te komenteve.
 3.Rezultatet e ekzekutimit
+3.1 Rezultatet e enkriptimit me komanden beale
+![](images/beale_encrypt.PNG)
+3.2 Rezultatet e dekriptimit me komanden beale
+![](images/beale_decrypt.PNG)
+
 
 
