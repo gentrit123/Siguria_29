@@ -29,8 +29,11 @@ class BealsCipher:
                 charidx = book_characters.index(char,0,lastIdx)
                 lastIdx = charidx
                 output_array.append(charidx + 1)
-        print(output_array)
-        
+        result = ""
+        for x in output_array:
+            result += str(x) + ""
+        print("Encoded word: " + result)
+          
     def decoder(self):
         book = input("Enter text file to use as key:")
         word = input("Enter word to decode:")
@@ -38,13 +41,13 @@ class BealsCipher:
         f = open(book, "r")
         book_characters = list(f.read())
         output_array = []
-        word_encoded = word.split(",")
-        print(book_characters)
+        word_encoded = word.strip().split(" ")
         for char in word_encoded:
-            print(book_characters[int(char)-1])
             output_array.append(book_characters[int(char)-1])
-            
-        print(output_array)
+        result = ""
+        for x in output_array:
+            result += x
+        print("Decoded word: " + result)
         
 BealsCipher()
         
