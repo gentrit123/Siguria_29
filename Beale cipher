@@ -1,1 +1,30 @@
+import sys
+import os
 
+class BealsCipher:
+    def __init__(self):
+        choose_function = input("Enter e to encode or d to decode:")
+        if(choose_function.lower() == 'e'):
+            self.encoder()
+        elif(choose_function.lower() == 'd'):
+            self.decoder()
+        else:
+            print("Please try again!")
+    def encoder(self):
+        book = input("Enter text file to use as key:")
+        word = input("Enter word to encode:")
+        outArray = []
+        f = open(book, "r")
+        book_characters = list(f.read())
+        word_characters = list(word)
+        
+        output_array = []
+        lastIdx = 0
+        for char in word_characters:
+            try:
+                charidx = book_characters.index(char,lastIdx,len(book_characters) -1)
+            
+        
+        
+        
+        
