@@ -12,7 +12,7 @@ def dekriptimi(teksti,qelesi):
          
       #Enkriptimi i shkronjave te vogla
       elif(char.islower()):
-         rezultati += chr((ord(char) - qelesi - 97) % 26 - 97)
+         rezultati += chr((ord(char) - qelesi - 97) % 26 + 97)
          
       elif(char<chr(65)):
          rezultati += char
