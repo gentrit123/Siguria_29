@@ -23,6 +23,24 @@ class BealsCipher:
         for char in word_characters:
             try:
                 charidx = book_characters.index(char,lastIdx,len(book_characters) -1)
+                lastIdx = charidx
+                output_array.append(charidx + 1)
+            except ValueError as e:
+                charidx = book_characters.index(char,0,lastIdx)
+                lastIdx = charidx
+                output_array.append(charidx + 1)
+        print(output_array)
+        
+    def decoder(self):
+        book = input("Enter text file to use as key:")
+        word = input("Enter word to decode:")
+        outArray = []
+        
+        
+        
+                
+                
+                
             
         
         
