@@ -11,3 +11,12 @@ CAESAR CIPHER
 ![](images/caesardecrypt.PNG)
 3.3 Rezultatet e ekzekutimit te caesar brute-force
 ![](images/caesarbruteforce.PNG)
+
+BEALE CIPHER
+1.Udhezime per ekzekutimin e programit
+-Beale cipher perdoret per kodimin e nje teksti duke u bazuar ne poziten e atyre shkronjave te tekstit ne nje dokument tjeter(ne rastin tone ne nje tekst file).
+2.Pershkrimi i komandave
+Pershkrimi i shkurte i komandave eshte bere brenda kodit me ane te komenteve.
+3.Rezultatet e ekzekutimit
+
+
