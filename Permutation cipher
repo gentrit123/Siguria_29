@@ -1,1 +1,9 @@
+import sys
+import os
+
+class PermutationCipher:
+    def __init__(self):
+        choose_function = input("Enter e to encode or d to decode:")
+        cipher_input = input("Enter permutation to use as key:")
+        
 
