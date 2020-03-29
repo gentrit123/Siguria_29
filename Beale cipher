@@ -31,7 +31,7 @@ class BealsCipher:
                 output_array.append(charidx + 1)
         result = ""
         for x in output_array:
-            result += str(x) + ""
+            result += str(x) + " "
         print("Encoded word: " + result)
           
     def decoder(self):
