@@ -1,1 +1,7 @@
-vazhdim i komandave te kerkuara
+import base64
+
+
+createprivatekey()
+createpublickey()
+
+//save them on xml file
