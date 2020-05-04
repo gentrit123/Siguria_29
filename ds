@@ -10,3 +10,18 @@ def func():
      #Kalimi neper secilin karakter
      for i in range(len(teksti)):
          char = teksti[i]
+         
+         if(char.isupper()):
+             rezultati += chr((ord(char) - int(qelesi) - 65) % 26 +65)
+             
+             
+         elif(char.islower()):
+            rezultati += chr((ord(char) - int(qelesi) - 97) % 26 + 97)
+            
+         elif(char<chr(65)):
+             rezultati += char
+             
+         else:
+             rezultati += " "
+             
+     return rezultati
