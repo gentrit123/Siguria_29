@@ -1,1 +1,12 @@
+import sys
+import os
+from os import sys
 
+m=sys.argv[1]
+def func():
+ #Dekriptimi me caesar crypt ne gjuhen programuese python
+ def dekriptimi(tekst,qelesi):
+     rezultati = ""
+     #Kalimi neper secilin karakter
+     for i in range(len(teksti)):
+         char = teksti[i]
