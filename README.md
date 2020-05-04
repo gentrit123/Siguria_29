@@ -1,5 +1,5 @@
 # Siguria_29
-CAESAR CIPHER
+CAESAR CIPHER   
 1.Udhezime per ekzekutimin e programit  
 -caesar cipher(kodi i cezarit) ndryshe njihet edhe si shift cipher dhe ky kod i fsheh mesazhet duke  shtyer secilen shkronje per disa vende ne alfabet.se sa shtyhet nje shkronje varet nga vlera e qelesit qe kemi vendosur si p.sh nese qelesi eshte 2 atehere shkronja A na behet C.  
 2.Pershkrimi per secilen komande
@@ -50,7 +50,8 @@ KOMANDA PERMUTATION
 3.2 Rezultatet e dekriptimit me komanden permutation(2 shembuj)  
 ![](images/permutation_decrypt.PNG)
 ![](images/permutation_decrypt2.PNG)
-##KOMANDAT
+
+**#KOMANDAT**
 #create-user
 #delete-user
 #export-key
