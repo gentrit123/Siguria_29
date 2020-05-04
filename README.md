@@ -52,8 +52,8 @@ KOMANDA PERMUTATION
 ![](images/permutation_decrypt2.PNG)
 
 **#KOMANDAT**
-#create-user
-#delete-user
-#export-key
-#import-key
-#write-message
+#create-user  
+#delete-user  
+#export-key  
+#import-key  
+#write-message  
