@@ -24,13 +24,18 @@ def enkriptimi(teksti,qelesi):
   return rezultati
 
 #E japin tekstin dhe qelesi dhe e testojme funksionin
+
 teksti = "Pershendetje nga FIEK!"
 qelesi = 3
+
 print("Teksti qe do enkriptohet : " + teksti)
 print("Qelesi : " + str(qelesi))
 print ("Teksti i enkriptuar: " + enkriptimi(teksti,qelesi))
 
      
+
+
+
 
 
 
