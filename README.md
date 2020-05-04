@@ -50,4 +50,9 @@ KOMANDA PERMUTATION
 3.2 Rezultatet e dekriptimit me komanden permutation(2 shembuj)  
 ![](images/permutation_decrypt.PNG)
 ![](images/permutation_decrypt2.PNG)
-#KOMANDAT
+##KOMANDAT
+#create-user
+#delete-user
+#export-key
+#import-key
+#write-message
