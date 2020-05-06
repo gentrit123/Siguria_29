@@ -604,6 +604,77 @@ if __name__ == '__main__':
                   tree.write(files)
  
        
+   def GenerateXML1(fileName):
+          a=5
+          root=xml.Element("RSAKeyValue")
+          
+          type1=xml.SubElement(root,"Modulus")
+          type1.text=""
+     
+          Amount1=xml.SubElement(root,"Exponent")
+          Amount1.text=""
+     
+          type2=xml.SubElement(root,"P")
+          type2.text=""
+     
+          type3=xml.SubElement(root,"Q")
+          type3.text=""
+     
+          type4=xml.SubElement(root,"DP")
+          type4.text=""
+          
+          type4=xml.SubElement(root,"DQ")
+          type4.text=""
+        
+          type4=xml.SubElement(root,"InverseQ")
+          type4.text=""
+       
+          type4=xml.SubElement(root,"D")
+          type4.text=""
+    
+          tree=xml.ElementTree(root)
+          with open(name,"wb") as files:
+                  tree.write(files)
+
+
+   
+  
+   a=len(sys.argv)
+   elif a==5:
+   
+      name=sys.argv[2]
+      name2=sys.argv[1]
+      name5=sys.argv[3]
+      name6=sys.argv[4]
+      
+      main()
+   elif a==4:
+    
+      name=sys.argv[2]
+      name2=sys.argv[1]
+      name5=sys.argv[3]
+      name6=""
+      
+      main()
+   elif a==3:
+   
+      name=sys.argv[2]
+      name2=sys.argv[1]
+      name5=""
+      name6=""
+      
+      main()
+   if name2 == 'Bealecipher':
+    func1()
+   elif name2== 'Permutationcipher':
+    func2()
+   elif name2== 'Caesarencrypt':
+    func0()
+   elif name2== 'Caesardecrypt':
+    func()
+   elif name2== 'Bruteforce':
+    func3()
+ 
         
  
  
