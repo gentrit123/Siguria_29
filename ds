@@ -57,51 +57,7 @@ def func0():
      elif(char<chr(65)):
         rezultati+=char
         
-     #Ne rast se kemi hapsira ato perfillen
-     else:
-        rezultati+=" "
-     
-  return rezultati
-
- #E japin tekstin dhe qelesi dhe e testojme funksionin
- teksti = input("Jepni tekstin:")
- qelesi = input("Jepni qelesin:")
- print("Teksti qe do enkriptohet : " + teksti)
-
- print ("Teksti i enkriptuar: " + enkriptimi(teksti,qelesi))
-
-def func1():
- class BealsCipher:
-    def __init__(self):
-        choose_function = input("Enter e to encode or d to decode:")
-        if(choose_function.lower() == 'e'):
-            self.encoder()
-        elif(choose_function.lower() == 'd'):
-            self.decoder()
-        else:
-            print("Please try again!")
-    def encoder(self):
-        book = input("Enter text file to use as key:")
-        word = input("Enter word to encode:")
-        outArray = []
-        f = open(book, "r")
-        book_characters = list(f.read())
-        word_characters = list(word)
-
-        output_array = []
-        lastIdx = 0
-        for char in word_characters:
-            try:
-                charidx = book_characters.index(char,lastIdx,len(book_characters) -1)
-                lastIdx = charidx
-                output_array.append(charidx + 1)
-            except ValueError as e:
-                charidx = book_characters.index(char,0,lastIdx)
-                lastIdx = charidx
-                output_array.append(charidx + 1)
-        result = ""
-        for x in output_array: 
-
+     #Ne
             
           
             
