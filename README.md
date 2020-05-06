@@ -64,3 +64,15 @@ Kjo komande ekzekutohet ne formen p.sh "delete-user genti" , me kete rast i fshi
 ## Komanda export-key
 Me ane te kesaj komande behet eksportimi i qelesave prej nje fajlli ne fajllin tjeter.  
 Kjo komande ekzekutohet si p.sh "export-key public/privat emri path" , ne kete rast emri percakton qelesi i cilit perdorues do te eksportohet ndersa path paraqet fajllin ku do te ruhet qelesi i eksportuar.
+
+## Komanda import-key
+Kjo komande e ben importimin e qelesit publik ose privat te shfrytzuesit nga shtegu qe i eshte dhene tek direktoriumi i qelesave.  
+Ekzekutimi i kesaj komande behet ne kete menyre p.sh "import-key emri path" ku emri paraqet emrin e qelesave ndersa path shtegun e qelesit qe do importohet.
+
+## Komanda write-message
+Me ane te kesaj komande e dergojme nje mesazh te enkriptuar tek  nje shfrytzues ,  mesazhin e enkriptojme me DES ndersa qelesin e DES e enkriptojme me RSA , ne menyre qe edhe nese egziston nje pale  e trete te mos arrij te dekriptoje qelesin .  
+Ekzekutimi i kesaj komande behet p.sh "write-message emri mesazhi file " , ku emri paraqet maresin e mesazhit , mesazhi paraqet mesazhin qe do ta dergojme ndersa file paraqet fajllin ku do ruhet mesazhi i enkriptuar.
+
+## Komanda read-message
+Komanda read-message , e mer mesazhin e enkriptuar dhe ate mesazh e dekripton dhe e paraqet mesazhin e dekriptuar.  
+Per ekzekutim kemi p.sh "read-message encrypted-message" , ku encrypted-message paraqet mesazhin e enkriptuar.
