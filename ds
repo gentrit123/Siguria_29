@@ -520,7 +520,90 @@ def generateKey(keySize,name,name2,name5,name6):
          
          print("Qelesi i enkriptum me rsa:")
         
+         naa=base64.b64encode(msg)
+         n4=naa.decode("utf-8")
+         
+         nee=base64.b64encode(encrypted)
+         n3=nee.decode("utf-8")
+         a=name
+         nu=a.encode("utf-8")
+         nuu=base64.b64encode(nu)
+         n1=nuu.decode("utf-8")
+         no=base64.b64encode(bi)
+         n2=no.decode("utf-8")
+         print(n1)
+         print(n4)
+         print(n3)
+         print(n2) 
+         ciphertext=n1+" . "+n2+" . "+n3+" . "+n4
+         print("ciphertext=", ciphertext)
+      except:
+          print("Kqyrni ma mire se keq e keni")
+    elif name2=="read-message":
+     try:
+        a=input("Jepni mesazhin e enkriptuar:")
+        decryptor = PKCS1_OAEP.new(keyPair)
+        decrypted = decryptor.decrypt(a)
+        print("Decrypted:", decrypted)
+     except:
+        print("Sboni")
+         
         
+def makeKeyFiles(name, keySize,name2,name5,name6):
+  if name2=="create-user":   
+    isFile = os.path.isfile("%s.xml" %(name))  
+    if isFile==True:
+          print("Gabim: Celesi %s ekziston paraprakisht" %(name))
+          sys.exit(1)
+
+
+    else:
+
+           generateKey(keySize,name,name2,name5,name6)
+           print("open boni")     
+   
+     
+  elif name2 == "delete-user":
+    
+    try:
+        generateKey(keySize,name,name2,name5,name6)
+        ae=name
+        
+    except:
+        print("Gabim: files '%s' nuk ekziston." %(name))
+  elif name2== "export-key":
+       generateKey(keySize,name,name2,name5,name6)
+       
+  elif name2=="import-key":
+       generateKey(keySize,name,name2,name5,name6)
+       
+  elif name2=="write-message":
+        generateKey(keySize,name,name2,name5,name6)
+        
+  elif name2=="read-message":
+         generateKey(keySize,name,name2,name5,name6)
+         
+        
+        
+        
+if __name__ == '__main__':
+   name2=sys.argv[1]
+  
+   def GenerateXML(fileName):
+          a=5
+          root=xml.Element("RSAKeyValue")
+          
+          type1=xml.SubElement(root,"Modulus")
+          type1.text=""
+     
+          Amount1=xml.SubElement(root,"Exponent")
+          Amount1.text=""
+     
+          tree=xml.ElementTree(root)
+          with open(name,"wb") as files:
+                  tree.write(files)
+ 
+       
         
  
  
