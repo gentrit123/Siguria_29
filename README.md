@@ -13,7 +13,7 @@ CAESAR CIPHER
 ![](images/caesarbruteforce.PNG)
 
 BEALE CIPHER
-1.Udhezime per ekzekutimin e programit  
+1.Udhezime per ekzekutimin e programit     
 -Ne fillim e krijojm nje folder te zbrazet, pastaj ne ate folder i vendosum fajllin e tipit text edhe ate te tipit python.Pastaj pasi i vendosum ne nje folder hym tek ai folder dhe e hapum nje command line ne kete folder.Pastaj i kemi disa hapa te ekzekutimit:
 1.Shenojm python, pastaj Enter.  
 2.Shenojm quit(), pastaj Enter.  
