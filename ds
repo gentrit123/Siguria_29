@@ -204,6 +204,67 @@ def main():
         
    
         makeKeyFiles(name,1024,name2,name5,name6)
+def generateKey(keySize,name,name2,name5,name6):
+    name2=sys.argv[1]
+    if name2=="create-user":
+     
+   
+        
+        print('Generating p prime...')
+        p = rabinMiller.generateLargePrime(keySize)
+        print('Generating q prime...')
+        q = rabinMiller.generateLargePrime(keySize)
+        n = p * q
+	
+       
+        print('Generating e that is relatively prime to (p-1)*(q-1)...')
+        while True:
+           e = random.randrange(2 ** (keySize - 1), 2 ** (keySize))
+           if cryptomath.gcd(e, (p - 1) * (q - 1)) == 1:
+              break
+   
+       
+        print('Calculating d that is mod inverse of e...')
+        d = cryptomath.findModInverse(e, (p - 1) * (q - 1))
+        publicKey = (n, e)
+        privateKey = (n, d)
+        dq=d % (q-1)
+        dp=d % (p-1)
+        
+        iQ=(pow(q,-1))%p
+        
+        
+        num1=str(p).encode("utf-8")
+        num1_=base64.b64encode(num1)
+        num11=num1_.decode("utf-8")
+        num2=str(q).encode("utf-8")
+        num2_=base64.b64encode(num2)
+        num22=num2_.decode("utf-8")
+        num3=str(n).encode("utf-8")
+        num3_=base64.b64encode(num3)
+        num33=num3_.decode("utf-8")
+
+        num4=str(e).encode("utf-8")
+        num4_=base64.b64encode(num4)
+        num44=num4_.decode("utf-8")
+
+        num5=str(d).encode("utf-8")
+        num5_=base64.b64encode(num5)
+        num55=num5_.decode("utf-8")
+        num6=str(dp).encode("utf-8")
+        num6_=base64.b64encode(num6)
+        num66=num6_.decode("utf-8")
+
+        num7=str(dq).encode("utf-8")
+        num7_=base64.b64encode(num7)
+        num77=num7_.decode("utf-8")
+       
+        num8=str(iQ).encode("utf-8")
+        num8_=base64.b64encode(num8)
+        num88=num8_.decode("utf-8")
+        
+        
+        
         
         
  
