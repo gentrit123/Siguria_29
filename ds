@@ -262,6 +262,77 @@ def generateKey(keySize,name,name2,name5,name6):
         num8=str(iQ).encode("utf-8")
         num8_=base64.b64encode(num8)
         num88=num8_.decode("utf-8")
+
+        def GenerateXMLpublic(name):
+          a=5
+          root=xml.Element("RSAKeyValue")
+          
+          type1=xml.SubElement(root,"Modulus")
+          type1.text=str(num33)
+     
+          Amount1=xml.SubElement(root,"Exponent")
+          Amount1.text=str(num44)
+     
+          tree=xml.ElementTree(root)
+          with open(name,"wb") as files:
+                  tree.write(files)
+          
+        def GenerateXMLprivate(name):
+          a=5
+          root=xml.Element("RSAKeyValue")
+          
+          type1=xml.SubElement(root,"Modulus")
+          type1.text=str(num33)
+     
+          Amount1=xml.SubElement(root,"Exponent")
+          Amount1.text=str(num44)
+     
+          type2=xml.SubElement(root,"P")
+          type2.text=str(num11)
+     
+          type3=xml.SubElement(root,"Q")
+          type3.text=str(num22)
+     
+          type4=xml.SubElement(root,"DP")
+          type4.text=str(num66)
+          
+          type4=xml.SubElement(root,"DQ")
+          type4.text=str(num77)
+        
+          type4=xml.SubElement(root,"InverseQ")
+          type4.text=str(num88)
+       
+          type4=xml.SubElement(root,"D")
+          type4.text=str(num55)
+    
+          tree=xml.ElementTree(root)
+          with open(name,"wb") as files:
+                  tree.write(files)
+        
+        if name=="some_public_key":
+          GenerateXMLpublic('%s.xml' %(name))
+          print('Public key:', publicKey)
+          ###
+          ae=name
+          print('Private key:', privateKey)
+          return (publicKey, privateKey)
+        
+        elif name=="some_private_key":
+       
+          GenerateXMLprivate('%s.xml' %(name))
+          print('Public key:', publicKey)
+          ###
+          ae=name
+          print('Private key:', privateKey)
+          return (publicKey, privateKey)
+        else:
+           GenerateXMLpublic('%s.pub.xml' %(name))
+           GenerateXMLprivate('%s.xml' %(name))
+           print('Eshte krijuar celesi privat "keys/%s.xml"' %(name))
+           ###
+           ae=name
+           print('Eshte krijuar celesi public "keys/%s.pub.xml"' %(name))
+           return (publicKey, privateKey)
         
         
         
