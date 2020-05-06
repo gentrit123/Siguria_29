@@ -52,8 +52,6 @@ KOMANDA PERMUTATION
 ![](images/permutation_decrypt2.PNG)
 
 # KOMANDAT
-#create-user  
-#delete-user  
-#export-key  
-#import-key  
-#write-message  
+Ekzekutimi i komandave eshte bere me COMMAND PROMPT , programi ne te cilen kemi vendosur kodin e detyres se pare dhe vazhdimin e detyres se dyte e kemi quajtur "ds" , te gjitha veprimet e programit do te kryhen ne programin e njejte dhe i kemi respektuar edhe rregullat per argumente,kodi per programin eshte shenuar ne gjuhen PYTHON.Ndersa sa i perket ekzekutimit te komandave dhe menyren e ekzekutimit do te paraqesim ne vijim per secilen komande.  
+
+## Komanda create-user
