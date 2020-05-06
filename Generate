@@ -1,6 +1,6 @@
 import random
 def rabinMiller(num):
-   s = num - 1
+   s = num -1
    t = 0
    
    while s % 2 == 0:
