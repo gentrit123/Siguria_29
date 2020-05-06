@@ -55,3 +55,12 @@ KOMANDA PERMUTATION
 Ekzekutimi i komandave eshte bere me COMMAND PROMPT , programi ne te cilen kemi vendosur kodin e detyres se pare dhe vazhdimin e detyres se dyte e kemi quajtur "ds" , te gjitha veprimet e programit do te kryhen ne programin e njejte dhe i kemi respektuar edhe rregullat per argumente,kodi per programin eshte shenuar ne gjuhen PYTHON.Ndersa sa i perket ekzekutimit te komandave dhe menyren e ekzekutimit do te paraqesim ne vijim per secilen komande.  
 
 ## Komanda create-user
+Tek komanda create-user , kerkesa behet me emrin e komandes dhe emrin me te cilin deshirojme ti emerojme fajllat ku do te ruhen qelesat privat dhe publik te RSA.  
+Si p.sh kerkesa mund te behet ne formen "create-user gentrit" , me qe rast do krijohen dy fjalla njeri qe permban qelesat privat dhe tjetri qe permban qelesat publik me po ate emer.
+
+## Komanda delete-user
+Kjo komande ekzekutohet ne formen p.sh "delete-user genti" , me kete rast i fshijme te gjitha fjallat me ate emer qe permbajne qelesa te RSA, nese ekzekutojm komanden perseri me te njejtin emer lajmrohemi se fajllat me ate emer jane fshire paraprakisht.
+
+## Komanda export-key
+Me ane te kesaj komande behet eksportimi i qelesave prej nje fajlli ne fajllin tjeter.  
+Kjo komande ekzekutohet si p.sh "export-key public/privat emri path" , ne kete rast emri percakton qelesi i cilit perdorues do te eksportohet ndersa path paraqet fajllin ku do te ruhet qelesi i eksportuar.
