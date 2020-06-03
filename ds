@@ -563,46 +563,7 @@ def makeKeyFiles(name, keySize,name2,name5,name6):
            print("open boni")     
    
      
-  elif name2 == "delete-user":
-    
-    try:
-        generateKey(keySize,name,name2,name5,name6)
-        ae=name
-        
-    except:
-        print("Gabim: files '%s' nuk ekziston." %(name))
-  elif name2== "export-key":
-       generateKey(keySize,name,name2,name5,name6)
-       
-  elif name2=="import-key":
-       generateKey(keySize,name,name2,name5,name6)
-       
-  elif name2=="write-message":
-        generateKey(keySize,name,name2,name5,name6)
-        
-  elif name2=="read-message":
-         generateKey(keySize,name,name2,name5,name6)
-         
-        
-        
-        
-if __name__ == '__main__':
-   name2=sys.argv[1]
-  
-   def GenerateXML(fileName):
-          a=5
-          root=xml.Element("RSAKeyValue")
-          
-          type1=xml.SubElement(root,"Modulus")
-          type1.text=""
-     
-          Amount1=xml.SubElement(root,"Exponent")
-          Amount1.text=""
-     
-          tree=xml.ElementTree(root)
-          with open(name,"wb") as files:
-                  tree.write(files)
- 
+
 
  
         
