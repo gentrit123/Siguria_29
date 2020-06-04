@@ -1,4 +1,105 @@
+import random, sys, os, rabinMiller, cryptomath
+import xml.etree.ElementTree as xml
+import base64
+from Crypto.Cipher import DES
+import secrets
+from Crypto.PublicKey import RSA
 
+from Crypto.Cipher import PKCS1_OAEP
+
+import Crypto
+import binascii
+##QEKY OSHT NI FUNKSION QE QAT VLER NUMERIKE QE JA JEPUM, PSH VLEREN E QELESIT KY E MERR E E KTHEN "N'base64".
+def return_base64(parametri):
+  encode_utf8=str(parametri).encode("utf-8")
+  b64=base64.b64encode(encode_utf8)
+  decode_utf8=b64.decode("utf-8")
+  return decode_utf8
+
+
+
+def generate_XML_public(parametri):
+  root=xml.Element("RSAKeyValue")
+  type1=xml.SubElement(root,"Modulus")
+  type1.text=str(num33)
+  Amount1=xml.SubElement(root,"Exponent")
+  Amount1.text=str(num44)
+  tree=xml.ElementTree(root)
+  with open(parametri,"wb") as files:
+      tree.write(files)
+
+def generate_XML_private(parametri):
+  pb, pr, p, q, n, e, d, dp, dq, iQ = generateKey()
+  p_base64 = return_base64(p)
+  q_base64 = return_base64(q)
+  n_base64 = return_base64(n)
+  e_base64 = return_base64(e)
+  d_base64 = return_base64(d)
+  dp_base64 = return_base64(dp)
+  dq_base64 = return_base64(dq)
+  iQ_base64 = return_base64(iQ)
+  
+
+  root=xml.Element("RSAKeyValue")
+          
+  type1=xml.SubElement(root,"Modulus")
+  type1.text=str(n_base64)
+     
+  Amount1=xml.SubElement(root,"Exponent")
+  Amount1.text=str(e_base64)
+     
+  type2=xml.SubElement(root,"P")
+  type2.text=str(p_base64)
+     
+  type3=xml.SubElement(root,"Q")
+  type3.text=str(q_base64)
+     
+  type4=xml.SubElement(root,"DP")
+  type4.text=str(dp_base64)
+          
+  type4=xml.SubElement(root,"DQ")
+  type4.text=str(dq_base64)
+        
+  type4=xml.SubElement(root,"InverseQ")
+  type4.text=str(iQ_base64)
+       
+  type4=xml.SubElement(root,"D")
+  type4.text=str(d_base64)
+    
+  tree=xml.ElementTree(root)
+  with open(parametri,"wb") as files:
+      tree.write(files)
+
+
+
+
+
+
+#Qeky osht nje funksion per mi gjeneru krejt parametrat qe vyn per mi gjeneru qelsat privat edhe publik mirepo edhe qelsat mi gjeneru.
+def generateKey():
+  
+  p = rabinMiller.generateLargePrime(keySize) #KETU KEMI GJENERUAR VLEREN E "q"
+  
+  q = rabinMiller.generateLargePrime(keySize) #KETU KEMI GJENERUAR VLEREN E "q"
+ 
+  n = p * q #KETU KEMI LLOGARITUR VLEREN E "n"
+
+  while True:
+   e = random.randrange(2 ** (keySize - 1), 2 ** (keySize)) #KETU KEMI GJENERUAR VLEREN E "e" E CILA ESHTE RELATIVELY PRIME TO (p-1)*(q-1).
+   if cryptomath.gcd(e, (p - 1) * (q - 1)) == 1:
+       break
+
+  d = cryptomath.findModInverse(e, (p - 1) * (q - 1)) #KETU KEMI VLEREN E "d" E CILA ESHTE MOD INVERSE OF "e"
+
+  publicKey = (n, e) #KJO ESHTE VLERA E QELSIT PUBLIK 
+
+  privateKey = (n, d) #KJO ESHTE VLERA E QELSIT PRIVAT
+
+  dp = d % (p-1) #KETU ESHTE VLERA E "dp"
+  dq = d % (q-1) #KETU ESHTE VLERA E "dq"
+  iQ = (pow(q, -1)) % p #KETU ESHTE VLERA E INVERSE q
+
+  return (publicKey, privateKey, p, q, n, e, d, dp, dq, iQ)
  
             
             
