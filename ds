@@ -539,28 +539,7 @@ def generateKey(keySize,name,name2,name5,name6):
          print("ciphertext=", ciphertext)
       except:
           print("Kqyrni ma mire se keq e keni")
-    elif name2=="read-message":
-     try:
-        a=input("Jepni mesazhin e enkriptuar:")
-        decryptor = PKCS1_OAEP.new(keyPair)
-        decrypted = decryptor.decrypt(a)
-        print("Decrypted:", decrypted)
-     except:
-        print("Sboni")
-         
-        
-def makeKeyFiles(name, keySize,name2,name5,name6):
-  if name2=="create-user":   
-    isFile = os.path.isfile("%s.xml" %(name))  
-    if isFile==True:
-          print("Gabim: Celesi %s ekziston paraprakisht" %(name))
-          sys.exit(1)
-
-
-    else:
-
-           generateKey(keySize,name,name2,name5,name6)
-           print("open boni")     
+  
    
      
 
