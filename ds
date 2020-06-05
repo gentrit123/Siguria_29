@@ -139,7 +139,34 @@ def is_not_Public(parametri_1, parametri_2):
 
       aname_ = b[-20:]          
     
-      
+   if (aname == "some_private_key.xml"):
+        book1_=r"C:\Users\hp\Desktop\arbnorit_mja_kallxu\some_public_key.xml"
+        book_ = "%s" %(book1_)
+
+        f2 = open(book, "r")
+        content2 = f2.read()
+
+        generate_XML_public("%s.pub.xml" %(parametri_2))
+        generate_XML_private("%s.xml" %(parametri_2))
+
+        print("Celesi privat u ruajt ne fajllin 'keys/%s.xml'." %(parametri_2))
+        print("Celesi publik u ruajt ne fajllin 'keys/%s.pub.xml'." %(parametri_2))
+
+        f3 = open("%s.pub.xml" %(name), "w+")
+        f3.write(str(content2))
+        f3.close()
+
+        book2_ = "%s" %(book1)
+
+        f4 = open(book2_, "r")
+        content3 = f4.read()
+
+        f5 = open("%s.xml" %(parametri_2), "w+")
+        f5.write(str(content3))
+        f5.close()
+
+      else:
+        print(error)   
 
 
 
