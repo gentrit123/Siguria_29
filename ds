@@ -122,7 +122,22 @@ def read_files(parametri):
   content = f.read()
   return content
             
-            
+  #Ky funksion perdore pasi e shikojm qe te import nuk e ka ajo permbajtjne publike.
+def is_not_Public(parametri_1, parametri_2):
+  try:
+    a = isFile(parametri_2)
+    if isFile[1] == True:
+      print("Gabim: Celesi '%s' ekziston paraprakisht." %(parametri_2))
+      sys.exit(1)
+    else:
+
+      book1 = r"C:\Users\hp\Desktop\%s" %(parametri_1)
+      book = "%s" %(book1)
+
+      f = open(book, "r")
+      content = f.read()
+
+      aname_ = b[-20:]          
     
       
 
