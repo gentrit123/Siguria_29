@@ -1,4 +1,38 @@
+import random, sys, os, rabinMiller, cryptomath
+import xml.etree.ElementTree as xml
+import base64
+from Crypto.Cipher import DES
+import secrets
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+import string
+import getpass
+import Crypto
+import binascii
 
+
+##QEKY OSHT NI FUNKSION QE QAT VLER NUMERIKE QE JA JEPUM, PSH VLEREN E QELESIT KY E MERR E E KTHEN "N'base64".
+def return_base64(parametri):
+  encode_utf8=str(parametri).encode("utf-8")
+  b64=base64.b64encode(encode_utf8)
+  decode_utf8=b64.decode("utf-8")
+  return decode_utf8
+
+
+#Ky funksion e kthen true ose false varsisht nese ekziston File apo jo, e kqyr edhe nese ekziston ai publik edhe ai privat pastaj i ruan ne nje array.
+def isFile(parametri):
+  isfile = os.path.isfile("%s.xml" %(parametri))
+  isfile_pub = os.path.isfile("%s.pub.xml" %(parametri))
+  isfile2 = [isfile, isfile_pub]
+  return isfile2
+
+
+#Ky eshte nje funksion i cili i fshin te dy Filet edhe ata publik te shfrytezuesit edhe ata privat, varsisht nese vlen kushti ne kod.
+def remove_2file(parametri):
+  os.remove("%s.xml" %(parametri))
+  os.remove("%s.pub.xml" %(parametri))
+  print("Eshte larguar celesi privat 'keys/%s.xml'" %(parametri))
+  print("Eshte larguar celesi publik 'keys/%s.pub.xml'" %(parametri))
             
           
             
