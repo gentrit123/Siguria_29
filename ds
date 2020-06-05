@@ -34,7 +34,33 @@ def remove_2file(parametri):
   print("Eshte larguar celesi privat 'keys/%s.xml'" %(parametri))
   print("Eshte larguar celesi publik 'keys/%s.pub.xml'" %(parametri))
             
-          
+def remove_2file(parametri):
+  os.remove("%s.xml" %(parametri))
+  os.remove("%s.pub.xml" %(parametri))
+  print("Eshte larguar celesi privat 'keys/%s.xml'" %(parametri))
+  print("Eshte larguar celesi publik 'keys/%s.pub.xml'" %(parametri))
+
+
+#Ky eshte nje funksion i cili nese vlen kushti qe ekziston File i qelsit privat te shfrytezuesit, ky e fshin ate.
+def remove_privat_file(parametri):
+
+  f = open("%s.xml" %(parametri), "r")
+  content = f.read()
+  f.close()
+  
+  os.remove("%s.xml" %(parametri))
+
+  if (content.find('P') == -1):
+    print("Eshte larguar celesi publik 'keys/%s.xml'" %(parametri))
+  else: 
+    print("Eshte larguar celesi privat 'keys/%s.xml'" %(parametri))
+
+
+#ky eshte nje funksion i cili nese vlen kushti qe ekzston File i qelsit publik te shfrytezuesit ather e ekzektuojm kete funksion, dhe ky funksion e fshin ate.
+def remove_public_file(parametri):
+  os.remove("%s.pub.xml" %(parametri))
+  print("Eshte larguar celesi publik 'keys/%s.pub.xml'" %(parametri))
+        
             
             
     
