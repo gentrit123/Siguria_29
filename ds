@@ -61,6 +61,36 @@ def remove_public_file(parametri):
   os.remove("%s.pub.xml" %(parametri))
   print("Eshte larguar celesi publik 'keys/%s.pub.xml'" %(parametri))
         
+
+#ky eshte nje funksion i cili e eksporton qelsin publik te edonit psh tek vlera e parametrt_2 psh genti.xml, nese nuk e kemi japur ate ateher ky e shfaq ate.
+def publicKey_export(parametri_1, parametri_2):
+  f = open("%s.pub.xml" %(parametri_1))
+  content = f.read()
+  if parametri_2 !="":
+    generate_XML_public(str(parametri_2))
+    f1 = open(str(parametri_2), "w+")
+    f1.write(str(content))
+    f1.close()
+    if parametri_2 !="":
+      print("Celesi publik u ruajt ne fajllin '%s'" %(parametri_2))
+    else:
+      print(content)
+
+
+#Ky eshte nje funksion i cili e eksporton qelsin private te edonit psh tek vlera e parametrit_2 psh genti.xml, nese nuk e kemi japur ate atehere ky e shhfaq ate.
+def privateKey_export(parametri_1, parametri_2):
+  book = "%s.xml" %(parametri_1)
+  f = open(book, "r")
+  content = f.read()
+  generate_XML_private(str(parametri_2))
+  f1 = open(str(parametri_2), "w+")
+  f1.write(str(content))
+  f1.close()
+  if parametri_2 != "":
+    print("Celesi privat u ruajt ne fajllin '%s'" %(parametri_2))
+  else:
+    print(content)
+
             
             
     
