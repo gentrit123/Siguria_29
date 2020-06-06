@@ -281,6 +281,47 @@ def generateKey():
   iQ = (pow(q, -1)) % p #KETU ESHTE VLERA E INVERSE q
 
   return (publicKey, privateKey, p, q, n, e, d, dp, dq, iQ)
+  
+  
+  
+def is_fjalekalimi():
+  #fjalekalimi = input("Jepni fjalekalimin:")
+  fjalekalimi = getpass.getpass(prompt='Jepni fjalekalimin:')
+  
+  special_chars = string.punctuation
+
+
+  permban_numer = any(map(str.isdigit, fjalekalimi))
+
+  permban_simbol = list(map(lambda char: char in special_chars, fjalekalimi))
+  permban_simbol_len = len(permban_simbol)
+
+
+
+
+  if len(fjalekalimi) < 6:
+    print("Fjalekalimi duhet te kete gjatesine se paku 6 karaktere.")
+    sys.exit()
+  else:
+    if permban_numer == True or permban_simbol[permban_simbol_len - 1] == True:
+      return fjalekalimi
+    else:
+      print("Gabim: Fjalekalimi duhet te permbaje se paku nje numer ose simbol.")
+      sys.exit(1)
+
+
+    #if permban_numer != True:
+     # print("Gabim: Fjalekalimi duhet te permbaje se paku nje numer ose simbol.")
+      #sys.exit(1)
+    #elif permban_simbol[permban_simbol_len - 1] != True:
+     # print("Gabim: Fjalekalimi duhet te permbaje se paku nje numer ose simbol.")
+      #sys.exit(1)
+
+    #else:
+     # return fjalekalimi
+
+
+
      
 
 
