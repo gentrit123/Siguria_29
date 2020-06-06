@@ -319,6 +319,83 @@ def is_fjalekalimi():
 
     #else:
      # return fjalekalimi
+     
+     
+     
+def main():
+  if s_argv_1 == "create-user":
+    if (len_sargv) != 3:
+      print ("Keni japur argumente gabim, ju duhet qe te jepni argumentete ne kete form 'create-user <name>'.")
+      sys.exit(1)
+    else:
+      if s_argv_2 == "some_public_key":
+        generate_XML_public("%s.xml" %(s_argv_2))
+
+      elif s_argv_2 == "some_private_key":
+        generate_XML_private("%s.xml" %(s_argv_2))
+
+      else:
+        fjalekalimi = is_fjalekalimi()
+        #fjalekalimi = input("Jepni fjalekalimin:")
+        #is_fjalekalimi(fjalekalimi)
+
+        fjalekalimi_perseri = getpass.getpass(prompt='Perserit fjalekalimin:')
+
+        if fjalekalimi == fjalekalimi_perseri:
+
+        
+          
+
+          generate_XML_public("%s.pub.xml" %(s_argv_2))
+          generate_XML_private("%s.xml" %(s_argv_2))
+
+          print("Eshte krijuar celesi privat 'keys/%s.xml'" %(s_argv_2))
+          print("Eshte krijuar celesi publik 'keys/%s.pub.xml'" %(s_argv_2))
+
+        else:
+          print("Gabim: Fjalekalimet nuk perputhen.")
+          sys.exit(1)
+
+ 
+
+
+if __name__ == "__main__":
+  len_sargv = len(sys.argv)
+
+  if len_sargv == 2:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = ""
+    s_argv_3 = ""
+    s_argv_4 ==""
+    main()
+
+
+
+  elif len_sargv == 3:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = sys.argv[2]
+    s_argv_3 = ""
+    s_argv_4 =""
+    main()
+
+
+
+
+  elif len_sargv == 4:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = sys.argv[2]
+    s_argv_3 = sys.argv[3]
+    s_argv_4 ==""
+    main()
+
+
+
+  elif len_sargv ==5:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = sys.argv[2]
+    s_argv_3 = sys.argv[3]
+    s_argv_4 ==sys.argv[4]
+    main()
 
 
 
