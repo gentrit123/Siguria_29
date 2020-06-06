@@ -382,7 +382,13 @@ if __name__ == "__main__":
     s_argv_3 = sys.argv[3]
     s_argv_4 == ""
     main()
-
+  
+  elif len_sargv == 5:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = sys.argv[2]
+    s_argv_3 = sys.argv[3]
+    s_argv_4 ==sys.argv[4]
+    main()
      
 
 
