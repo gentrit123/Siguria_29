@@ -356,7 +356,24 @@ def main():
           print("Gabim: Fjalekalimet nuk perputhen.")
           sys.exit(1)
 
- 
+if __name__ == "__main__":
+  len_sargv = len(sys.argv)
+
+  if len_sargv == 2:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = ""
+    s_argv_3 = ""
+    s_argv_4 == ""
+    main()
+
+
+
+  elif len_sargv == 3:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = sys.argv[2]
+    s_argv_3 = ""
+    s_argv_4 = ""
+    main()   
 
 
 
