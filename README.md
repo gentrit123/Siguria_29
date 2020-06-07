@@ -93,3 +93,4 @@ Komanden e japin ne formen "delete-user shfrytzuesi".
 ## Komanda login
 Permes kesaj komande testohet qifti pra shfrytzuesi dhe fjalekalimi neseqoftese eshte gjithqka ne rregull leshohet tokeni i nenshkruar i cili pra perdoret per autentikimin e shfrytzuesit , ky token duhet te  kete jetegjatesine 20 minuta.  
 Per nenshkrim te tokenit duhet te perdoret qelesi privat i shrytzuesit , ndersa per vertetim qelesi publik i shfrytzuesit.
+![](images/Login.PNG)
