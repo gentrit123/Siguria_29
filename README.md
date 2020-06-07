@@ -81,21 +81,22 @@ Per ekzekutim kemi p.sh "read-message encrypted-message" , ku encrypted-message 
 ## Komanda create-user
 Kjo komande eshte vazhdime komandes paraprake ne fazen e dyte,ne kete rast kur krijohet shfrytzuesi duhet te japim nje fjalekalim i cili duhet dhene permes inputit , fjalekalimi duhet te kete se paku 6 karaktere dhe nje numer ose simbol.  
 Pastaj ai shfrytezues duhet ruajtur ne nje fajll ose DBMS ,  se bashku me fjalekalimin i cili duhet te jete i siguruar permes hash algoritmeve edhe salting.
-![](images/Create-user-1.PNG)
-![](images/Create-user-2.PNG)
-![](images/Create-user-3.PNG)
+![](images/c-user11.PNG)
+![](images/c_user2.PNG)
+![](images/c-user3.PNG)
 
 ## Komanda delete-user
 Edhe kjo komande eshte vazhdim i fazes se dyte, kur  e therrasim kete komande atehere me ane te kesaj komande duhet te jemi ne gjendje te bejme fshirjen e te gjitha te dhenave atu ku i kemi ruajtur permes komandes create-user , qofte ne file ose ne ndonje DBMS.  
 Komanden e japin ne formen "delete-user shfrytzuesi".
-![](images/Delete-user.PNG)
+![](images/delete-user1.PNG)
 
 ## Komanda login
 Permes kesaj komande testohet qifti pra shfrytzuesi dhe fjalekalimi neseqoftese eshte gjithqka ne rregull leshohet tokeni i nenshkruar i cili pra perdoret per autentikimin e shfrytzuesit , ky token duhet te  kete jetegjatesine 20 minuta.  
 Per nenshkrim te tokenit duhet te perdoret qelesi privat i shrytzuesit , ndersa per vertetim qelesi publik i shfrytzuesit.
-![](images/login_.PNG)
+![](images/login1.PNG)
 
 ## Komanda status
 Permes kesaj komande ne marim informacione sa i perket tokenit , ne qoftese tokeni ka skaduar pra nuk ka nenshkrim valid ose nuk ekziston shfrytzuesi ,  atehere ne kete rast tokeni nuk konsiderohet valid.  
 Komanda jepet ne formen "ds status <token>".
+![](images/status1.PNG)
 
