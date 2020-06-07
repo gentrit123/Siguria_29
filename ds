@@ -587,4 +587,23 @@ def status(parametri_1):
            #print("User: %s" %a)
            print("Valid: jo")
 
+#Ky eshte nje funksion i cili ben enkriptimin me ane te desit si the i shendron ne base 64
+def des(parametri_1,parametri_2):
+  key=secrets.token_bytes(8)
+  iv=secrets.token_bytes(8)
+  cipher = DES.new(key, DES.MODE_OFB)
+  res=bytes(parametri_2, 'utf-8')
+  
+  msg=iv+cipher.encrypt(res)#qeta tash kena me mar e me signature
+  msg1=base64.b64encode(msg)
+  msg2=msg1.decode("utf-8")
+  
+  iv1=base64.b64encode(iv)
+  ivb64=iv1.decode("utf-8")
+
+  namepq1=parametri_1.encode("utf-8")
+  namepq2=base64.b64encode(namepq1)
+  namepq3=namepq2.decode("utf-8")
+  return (key, iv, msg, ivb64, namepq3, msg2)
+  #name i kthym nbase 64 o namepq3
 
