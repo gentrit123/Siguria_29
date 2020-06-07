@@ -368,7 +368,44 @@ def is_fjalekalimi():
 def create_user_textfile(name):
   b = r"C:\Users\hp\Desktop\Users\%s" %(name)
   f= open("%s.txt" %(b),"w+")     
-     
+def status(parametri_1):
+        #token=str(s_argv_2)
+        token=str(parametri_1)
+        try:
+         data = tokenlib.parse_token(token, secret="Secret_Key")
+         a = data['username']
+         b = data['signature']
+         time = data['t']
+         #print("qe 2")
+         #print(b)
+         c = data['verify']
+         u = data['hashv']
+         #print(a)
+         e = found_e(str(a))
+         n = found_n(str(a))
+
+        
+
+         msg = b'str(c)'
+        #hash = int.from_bytes(sha512(msg).digest(), byteorder='big')
+         hashFromSignature = pow(int(b), e, n)
+         #print(e)
+         #print(hash)
+         #print("qe tash")
+         #print(hashFromSignature)
+         #print("genti")
+         if ((u == hashFromSignature) == True):
+           print("User: %s" %a)
+           print("Valid: po")
+           print("Skadimi: %s" %time)
+
+         else:
+           print("User: %s" %a)
+           print("Valid: jo")
+           print("Skadimi: %s" %time)
+        except:
+           #print("User: %s" %a)
+           print("Valid: jo")     
 def main():
   if s_argv_1 == "create-user":
     if (len_sargv) != 3:
