@@ -120,3 +120,22 @@ def is_content_Priv_or_Pub(parametri):
 
   return content
 
+#Ky funksion perdoret pasi e shikojm qe te import nuk e ka ajo permbajtjen private.
+def is_not_Private(parametri_1, parametri_2):
+  book1 = r"C:\Users\hp\Desktop\%s" %(parametri_1)
+  book = "%s" %(book1)
+  f = open(book, "r")
+  content = f.read()
+
+  generate_XML_public("%s.pub.xml" %(parametri_2))
+  print("Celesi publik u ruajt ne fajllin 'keys/%s.pub.xml'." %(parametri_2))
+
+  f2 = open("%s.pub.xml" %(parametri_2), "w+")
+  f2.write(str(content))
+  f2.close()
+#Pasi e kem perdor kogja shume
+def read_files(parametri):
+  f = open(book, "r")
+  content = f.read()
+  return content
+
