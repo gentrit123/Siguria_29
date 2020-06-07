@@ -365,7 +365,9 @@ def is_fjalekalimi():
     #else:
      # return fjalekalimi
      
-     
+def create_user_textfile(name):
+  b = r"C:\Users\hp\Desktop\Users\%s" %(name)
+  f= open("%s.txt" %(b),"w+")     
      
 def main():
   if s_argv_1 == "create-user":
