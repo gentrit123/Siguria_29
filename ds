@@ -280,5 +280,31 @@ def generate_XML_private(parametri):
       tree.write(files)
 
 
+#Qeky osht nje funksion per mi gjeneru krejt parametrat qe vyn per mi gjeneru qelsat privat edhe publik mirepo edhe qelsat mi gjeneru.
+def generateKey():
+  keySize=1024
+  p = rabinMiller.generateLargePrime(1024) #KETU KEMI GJENERUAR VLEREN E "q"
+  
+  q = rabinMiller.generateLargePrime(keySize) #KETU KEMI GJENERUAR VLEREN E "q"
+ 
+  n = p * q #KETU KEMI LLOGARITUR VLEREN E "n"
+
+  while True:
+   e = random.randrange(2 ** (keySize - 1), 2 ** (1024)) #KETU KEMI GJENERUAR VLEREN E "e" E CILA ESHTE RELATIVELY PRIME TO (p-1)*(q-1).
+   if cryptomath.gcd(e, (p - 1) * (q - 1)) == 1:
+       break
+
+  d = cryptomath.findModInverse(e, (p - 1) * (q - 1)) #KETU KEMI VLEREN E "d" E CILA ESHTE MOD INVERSE OF "e"
+
+  publicKey = (n, e) #KJO ESHTE VLERA E QELSIT PUBLIK 
+
+  privateKey = (n, d) #KJO ESHTE VLERA E QELSIT PRIVAT
+
+  dp = d % (p-1) #KETU ESHTE VLERA E "dp"
+  dq = d % (q-1) #KETU ESHTE VLERA E "dq"
+  iQ = (pow(q, -1)) % p #KETU ESHTE VLERA E INVERSE q
+
+  return (publicKey, privateKey, p, q, n, e, d, dp, dq, iQ)
+
 
 
