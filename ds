@@ -103,4 +103,20 @@ def privateKey_export(parametri_1, parametri_2):
   else:
     print(content)
 
+#Funksion i cili i merr veq 4 karakteret e fundit te nje string-u.
+def get_last_four_char(parametri):
+  last_four_char=parametri[-4:]
+  return last_four_char
+
+
+
+
+
+#Kur ky na kthen si return content, na n qat kontent e kqyrim a ka permbajtje publik apo privat.
+def is_content_Priv_or_Pub(parametri):
+  book = r"C:\Users\hp\Desktop\%s" %(parametri)
+  f = open("%s" %(book), "r")
+  content = f.read()
+
+  return content
 
