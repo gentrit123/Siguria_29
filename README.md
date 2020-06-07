@@ -88,7 +88,7 @@ Pastaj ai shfrytezues duhet ruajtur ne nje fajll ose DBMS ,  se bashku me fjalek
 ## Komanda delete-user
 Edhe kjo komande eshte vazhdim i fazes se dyte, kur  e therrasim kete komande atehere me ane te kesaj komande duhet te jemi ne gjendje te bejme fshirjen e te gjitha te dhenave atu ku i kemi ruajtur permes komandes create-user , qofte ne file ose ne ndonje DBMS.  
 Komanden e japin ne formen "delete-user shfrytzuesi".
-![](images/delete-user1.PNG)
+![](images/d-user1.PNG)
 
 ## Komanda login
 Permes kesaj komande testohet qifti pra shfrytzuesi dhe fjalekalimi neseqoftese eshte gjithqka ne rregull leshohet tokeni i nenshkruar i cili pra perdoret per autentikimin e shfrytzuesit , ky token duhet te  kete jetegjatesine 20 minuta.  
