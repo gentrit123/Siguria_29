@@ -372,3 +372,23 @@ def base64_to_num(parametri_1):
   a2=a1.decode("utf-8")
   return a2
 
+#Me ane te keti funksioni e marrum vleren e qelsit publik "e".
+def found_e(parametri_1):
+  text = read_xml_file(parametri_1)
+  m = re.search('<Exponent>(.+?)</Exponent>', text)
+  if m:
+    found = m.group(1)
+  final = base64_to_num(found)
+  return int(final)
+
+
+
+#Me ane te keti funksioni e marrum vleren e qelsit privat "d". 
+def found_d(parametri_1):
+  text = read_xml_file(parametri_1)
+  m = re.search('<D>(.+?)</D>', text)
+  if m:
+    found = m.group(1)
+  final = base64_to_num(found)
+  return int(final)
+
