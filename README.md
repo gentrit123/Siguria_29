@@ -100,3 +100,11 @@ Permes kesaj komande ne marim informacione sa i perket tokenit , ne qoftese toke
 Komanda jepet ne formen "ds status <token>".
 ![](images/status1.PNG)
 
+## Komanda write-message
+Kjo komande eshte zgjerim i komandes paraprake ne fazen e dyte ,  si shtese e kesaj komande eshte opsioni  " sender <token>"  , ku me sender e paraqesim emrin e shfrytzuesit dhe pastja tokeni i tij , nese komanda deshton atehere tokeni nuk eshte valid.  
+Nese komanda ka sukses , nenshrimi behet me qelesin privat te derguesit.
+![](images/write-message.PNG)  
+  
+## Komanda read-message
+Edhe te kjo komande vetem eshte bere vazhdimi i saj , ku si opcion i ri eshte shtuar pjesa e derguesit apo nenshkrimit ku ai nenshkrim do te verifikohet duke perdorur qelesin publik te derguesit , nese kjo komande mungon atehere injorohet kjo pjese dhe komanda ekzekutohet si ne fazen e dyte.
+
