@@ -391,4 +391,149 @@ def found_d(parametri_1):
     found = m.group(1)
   final = base64_to_num(found)
   return int(final)
+  
+
+
+
+
+#Me ane te ketij funksioni e marrum vleren e parametrit "n" te qelesit te shfrytezuesit.
+def found_n(parametri_1):
+  text = read_xml_file(parametri_1)
+  m = re.search('<Modulus>(.+?)</Modulus>', text)
+  if m:
+    found = m.group(1)
+  final = base64_to_num(found)
+  return int(final)
+
+
+
+
+#Me ane te ketij funksioni e shikojm se a permban numra apo ndonje simbol te veqant fjalekalimi.
+def is_fjalekalimi():
+  #fjalekalimi = input("Jepni fjalekalimin:")
+  fjalekalimi = getpass.getpass(prompt='Jepni fjalekalimin:')
+  
+  special_chars = string.punctuation
+
+
+  permban_numer = any(map(str.isdigit, fjalekalimi))
+
+  permban_simbol = list(map(lambda char: char in special_chars, fjalekalimi))
+  permban_simbol_len = len(permban_simbol)
+
+
+
+
+  if len(fjalekalimi) < 6:
+    print("Gabim: Fjalekalimi duhet te kete gjatesine se paku 6 karaktere.")
+    sys.exit()
+  else:
+    if permban_numer == True or permban_simbol[permban_simbol_len - 1] == True:
+      return fjalekalimi
+    else:
+      print("Gabim: Fjalekalimi duhet te permbaje se paku nje numer ose simbol.")
+      sys.exit(1)
+
+
+
+
+
+#Me ane te ketij funksioni lexojm nga permbajtja e xml filev.
+def read_xml_file(parametri_1):
+  f = open("%s.xml" %(parametri_1), "r")
+  content = f.read()
+  f.close()
+  return content
+
+
+
+
+#Me ane te ketij funksioni i fshijm shfrytezuesit.
+def delete_users(parametri_1):
+  p = parametri_1
+  b = r"C:\Users\hp\Desktop\Users\%s" %(parametri_1)
+  f = open("%s.xml" %(parametri_1), "r")
+  content = f.read()
+  f.close()
+  os.remove("%s.txt" %(b))
+  os.remove("%s.xml" %(parametri_1))
+  if (content.find('P') == -1):
+
+
+    print("Jane fshier te gjitha te dhenat e shfrytezuesit nga baza e shenimeve!.")
+       
+    print("Eshte larguar celesi publik 'keys/%s.xml'" %(parametri_1))
+
+  else:
+
+    print("Jane fshier te gjitha te dhenat e shfrytezuesit nga baza e shenimeve!.")                                 
+    print("Eshte larguar celesi privat 'keys/%s.xml'" %(parametri_1))
+
+
+
+
+
+#Edhe me ane te ketij funksioni fshijm shfrytezuesit.
+def delete_user2(parametri_1):
+  b = r"C:\Users\hp\Desktop\Users\%s" %(parametri_1)
+  os.remove("%s.txt" %(b))
+  os.remove("%s.pub.xml" %(parametri_1))
+
+
+
+
+  #Edhe me ane te ketij funksioni fshijm shfrytezuesit.
+def delete_user3(parametri_1):
+  b = r"C:\Users\hp\Desktop\Users\%s" %(parametri_1)
+  os.remove("%s.txt" %(b))
+  os.remove("%s.xml" %(parametri_1))
+  os.remove("%s.pub.xml" %(parametri_1))
+  print("Jane fshier te gjitha te dhenat e shfrytezuesit nga baza e shenimeve!.")
+  print("Eshte larguar celesi privat 'keys/%s.xml'" %(parametri_1))
+  print("Eshte larguar celesi publik 'keys/%s.pub.xml'" %(parametri_1))
+
+
+
+
+
+#Me ane te ketij funksioni krijojm nje text file ne te cilen e ruajm fjalekalimin i cili eshte i siguruar me ane te hash and salt.
+def create_user_textfile(name, parametri_2):
+  b = r"C:\Users\hp\Desktop\Users\%s" %(name)
+  f= open("%s.txt" %(b),"w+")
+  
+  
+  content1 = str(parametri_2)
+  content = get_hashed_password(content1)
+
+  f.write(content)
+  f.close()
+
+
+
+#Me ane te ketij funksioni marrim permbajtjen e fajleve te cilat i cekim.
+def read_file(parametri_1):
+  b = r"C:\Users\hp\Desktop\Users\%s" %(parametri_1)
+  f= open("%s.txt" %(b),"r")
+  content = f.read()
+  return content
+
+
+
+#Me ane te ketij funksioni shikojme se fjalekalimi te cilin e shenojme a i takon vertet shfrytezuesit.
+def is_password(parametri_1,parametri_2):
+  password = parametri_1
+  return check_password(password, parametri_2)
+
+
+
+#Me ane te ketij funksioni e gjenerojm tokenin.
+def token(parametri_1):
+  msg = "A_secret_Key"
+  hash_v,sig_nature = signature(msg,parametri_1)
+  
+  x = datetime.now() + timedelta(seconds=1200)
+  token = tokenlib.make_token({"username": "%s" %(parametri_1),"signature": sig_nature, "verify": "%s" %(msg),"t": "%s" %(x), "hashv": hash_v},timeout=1200, secret="Secret_Key")
+  print(token)
+
+
 
