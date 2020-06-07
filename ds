@@ -607,3 +607,33 @@ def des(parametri_1,parametri_2):
   return (key, iv, msg, ivb64, namepq3, msg2)
   #name i kthym nbase 64 o namepq3
 
+#Me ane te ketij funksioni bejme enkriptimin me ane te qelsave te RSA.
+def encrypt(n_text,user):
+  #e,n = pub_key
+  e = found_e(user)
+  n = found_n(user)
+  
+  
+  
+  
+  x = []
+  m = 0
+  for i in n_text:
+    if (i.isupper()):
+      m = ord(i) - 65
+      c = pow(m,e,n)
+      #c = (m**e) % n
+      x.append(c)
+    elif (i.islower()):
+      m = ord(i) - 97
+      c = pow(m,e,n)
+      #c = (m**e) % n
+      
+      x.append(c)
+    elif (i.isspace()):
+      spc = 400
+      x.append(400)
+  return x
+
+
+
