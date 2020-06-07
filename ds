@@ -367,7 +367,22 @@ def is_fjalekalimi():
      
 def create_user_textfile(name):
   b = r"C:\Users\hp\Desktop\Users\%s" %(name)
-  f= open("%s.txt" %(b),"w+")     
+  f= open("%s.txt" %(b),"w+") 
+  
+  
+  
+def signature(parametri_1,parametri_2):
+  msg = b'str(parametri_1)'
+  n = found_n(parametri_2)
+  d = found_d(parametri_2)
+  hash = int.from_bytes(sha512(msg).digest(), byteorder='big')
+  #print("qe 1")
+  signature = pow(hash, d, n)
+  #print(signature)
+  return (hash, signature)  
+  
+  
+  
 def status(parametri_1):
         #token=str(s_argv_2)
         token=str(parametri_1)
