@@ -547,3 +547,44 @@ def signature(parametri_1,parametri_2):
   #print(signature)
   return (hash, signature)
 
+#Me ane te ketij funksioni varesisht tokenit na shfaqen te dhenat ne lidhje me shfrytezuesin, se a eshte valid apo jo, deri kur eshte valid.
+def status(parametri_1):
+        #token=str(s_argv_2)
+        token=str(parametri_1)
+        try:
+         data = tokenlib.parse_token(token, secret="Secret_Key")
+         a = data['username']
+         b = data['signature']
+         time = data['t']
+         #print("qe 2")
+         #print(b)
+         c = data['verify']
+         u = data['hashv']
+         #print(a)
+         e = found_e(str(a))
+         n = found_n(str(a))
+
+        
+
+         msg = b'str(c)'
+        #hash = int.from_bytes(sha512(msg).digest(), byteorder='big')
+         hashFromSignature = pow(int(b), e, n)
+         #print(e)
+         #print(hash)
+         #print("qe tash")
+         #print(hashFromSignature)
+         #print("genti")
+         if ((u == hashFromSignature) == True):
+           print("User: %s" %a)
+           print("Valid: po")
+           print("Skadimi: %s" %time)
+
+         else:
+           print("User: %s" %a)
+           print("Valid: jo")
+           print("Skadimi: %s" %time)
+        except:
+           #print("User: %s" %a)
+           print("Valid: jo")
+
+
