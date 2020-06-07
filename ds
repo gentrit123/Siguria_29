@@ -347,4 +347,28 @@ def decrypt(d,n,c_text, user):
   return x 
 
 
+def hash_salt():
+  bcrypt.hashpw(parametri_1, bcrypt.gensalt(12))
+  return bcrypt.hashpw(parametri_1, bcrypt.gensalt(12))
+
+
+
+
+def get_hashed_password(plain_text_password):
+  return bcrypt.hashpw(plain_text_password, bcrypt.gensalt())
+
+
+
+#Me ane te keti funksione e kthejm si return vleren e passwordit te siguruar me ane te hash and salt.
+def check_password(plain_text_password, hashed_password):
+  return bcrypt.checkpw(plain_text_password, hashed_password)
+
+
+
+#Me ane te keti funksioni e kthejm vleren nga base 64 ne numer.
+def base64_to_num(parametri_1):
+  a=parametri_1.encode("utf-8")
+  a1=base64.b64decode(a)
+  a2=a1.decode("utf-8")
+  return a2
 
