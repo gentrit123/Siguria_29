@@ -635,5 +635,23 @@ def encrypt(n_text,user):
       x.append(400)
   return x
 
+#Me ane te ketij funksioni behet dekriptimi me ane te qelsave te RSA.
+def decrypt(d,n,c_text, user):
+  d,n = priv_key
+  txt = c_text.split(',')
+  x = ''
+  m = 0
+  for i in txt:
+    if (i == '400'):
+      x += ' '
+    else:
+      m = (int(i) ** d) % n
+      m += 65
+      c = chr(m)
+      x += c
+  return x 
+
+
+
 
 
