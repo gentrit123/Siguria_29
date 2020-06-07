@@ -47,6 +47,8 @@ def remove_2file(parametri):
   print("Eshte larguar celesi publik 'keys/%s.pub.xml'" %(parametri))
 
 
+
+
 #Ky eshte nje funksion i cili nese vlen kushti qe ekziston File i qelsit privat te shfrytezuesit, ky e fshin ate.
 def remove_privat_file(parametri):
 
@@ -103,11 +105,13 @@ def privateKey_export(parametri_1, parametri_2):
   else:
     print(content)
 
+
+
+
 #Funksion i cili i merr veq 4 karakteret e fundit te nje string-u.
 def get_last_four_char(parametri):
   last_four_char=parametri[-4:]
   return last_four_char
-
 
 
 
@@ -119,6 +123,9 @@ def is_content_Priv_or_Pub(parametri):
   content = f.read()
 
   return content
+
+
+
 
 #Ky funksion perdoret pasi e shikojm qe te import nuk e ka ajo permbajtjen private.
 def is_not_Private(parametri_1, parametri_2):
@@ -140,7 +147,6 @@ def read_files(parametri):
   return content
   
   
-
 
 
 #Ky funksion perdore pasi e shikojm qe te import nuk e ka ajo permbajtjne publike.
@@ -472,7 +478,6 @@ def delete_users(parametri_1):
 
 
 
-
 #Edhe me ane te ketij funksioni fshijm shfrytezuesit.
 def delete_user2(parametri_1):
   b = r"C:\Users\hp\Desktop\Users\%s" %(parametri_1)
@@ -612,10 +617,6 @@ def encrypt(n_text,user):
   #e,n = pub_key
   e = found_e(user)
   n = found_n(user)
-  
-  
-  
-  
   x = []
   m = 0
   for i in n_text:
@@ -650,6 +651,155 @@ def decrypt(d,n,c_text, user):
       c = chr(m)
       x += c
   return x 
+  
+  
+
+
+#Ky eshte funksioni main, nga i cili thirren te gjithe funksionet tjera per ekzektuim.
+def main():
+  if s_argv_1 == "create-user":
+    if (len_sargv) != 3:
+      
+
+
+      print ("Keni japur argumente gabim, ju duhet qe te jepni argumentete ne kete form 'create-user <name>'.")
+      sys.exit(1)
+    else:
+      if s_argv_2 == "some_public_key":
+        generate_XML_public("%s.xml" %(s_argv_2))
+
+      elif s_argv_2 == "some_private_key":
+        generate_XML_private("%s.xml" %(s_argv_2))
+
+      else:
+        fjalekalimi = is_fjalekalimi()
+        #fjalekalimi = input("Jepni fjalekalimin:")
+        #is_fjalekalimi(fjalekalimi)
+
+        fjalekalimi_perseri = getpass.getpass(prompt='Perserit fjalekalimin:')
+
+        if fjalekalimi == fjalekalimi_perseri:
+
+          generate_XML_public("%s.pub.xml" %(s_argv_2))
+          generate_XML_private("%s.xml" %(s_argv_2))
+          create_user_textfile(s_argv_2, fjalekalimi)
+          print("Eshte krijuar shfrytezuesi '%s'" %(s_argv_2))
+          print("Eshte krijuar celesi privat 'keys/%s.xml'" %(s_argv_2))
+          print("Eshte krijuar celesi publik 'keys/%s.pub.xml'" %(s_argv_2))
+
+        else:
+          print("Gabim: Fjalekalimet nuk perputhen.")
+          sys.exit(1)
+  elif s_argv_1 == "delete-user":
+    if (len_sargv == 2) or (len_sargv == 3) :
+      try:
+        isFile = os.path.isfile("%s.xml" %(s_argv_2))
+        isFile1=os.path.isfile("%s.pub.xml" %(s_argv_2))
+        if isFile == True and isFile1 == True:
+          delete_user3(s_argv_2)
+        elif isFile == True:
+          delete_users(s_argv_2)
+        elif isFile1 == True:
+          delete_user2(s_argv_2)
+        else:
+          print("Gabim: Celesi '%s' nuk ekziston." %(s_argv_2))
+      except:
+        print("Gabim: Celesi '%s' nuk ekziston." %(s_argv_2))
+  elif s_argv_1 == "login":
+
+    if (len_sargv) != 3:
+      print("Keni japur argumentet gabim!")
+    else:
+      password = getpass.getpass(prompt='Jepni fjalekalimin: ')
+      content_text_file = read_file(s_argv_2)
+      if is_password(password, content_text_file) == True:
+        #print("po jon tnjejt")
+        token(s_argv_2)
+
+      else:
+        print("Gabim: shfrytezuesi ose fjalekalimi i gabuar.")
+  elif s_argv_1 == "status":
+    if (len_sargv) != 3:
+      print("Keni japur argumentet gabim!")
+    else:
+      status(s_argv_2)
+  elif s_argv_1 == "write-message":
+    name = s_argv_2
+    message = s_argv_3
+    file = s_argv_4
+    sender = s_argv_5
+    tokenn = s_argv_6
+
+    iv = des(name,message)[3]
+
+    msg = des(name, message)[2]
+    sender_b64 = return_base64(sender)
+    
+
+    ahash, bsignature=signature(msg, name)
+    bsignature_base64 = return_base64(bsignature)
+    
+    msg_base64 = des(name, message)[5]
+    name_base64=return_base64(name)
+    
+
+    encryp = encrypt(str(des(name, message)[0]), name)
+    final_encrypt = return_base64(encryp)
+    
+    equal = "ciphertext = "
+
+    print(equal + name_base64+" . "+iv+" . "+final_encrypt+" . "+msg_base64+" . "+sender_b64+" . "+bsignature_base64)
+
+
+
+
+if __name__ == "__main__":
+  len_sargv = len(sys.argv)
+
+  if len_sargv == 2:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = ""
+    s_argv_3 = ""
+    s_argv_4 ==""
+    main()
+
+
+
+  elif len_sargv == 3:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = sys.argv[2]
+    s_argv_3 = ""
+    s_argv_4 =""
+    main()
+
+
+
+
+  elif len_sargv == 4:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = sys.argv[2]
+    s_argv_3 = sys.argv[3]
+    s_argv_4 ==""
+    main()
+
+
+
+  elif len_sargv ==5:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = sys.argv[2]
+    s_argv_3 = sys.argv[3]
+    s_argv_4 ==sys.argv[4]
+    main()
+
+  elif len_sargv == 7:
+    s_argv_1 = sys.argv[1]
+    s_argv_2 = sys.argv[2]
+    s_argv_3 = sys.argv[3]
+    s_argv_4 =sys.argv[4]
+    s_argv_5 = sys.argv[5]
+    s_argv_6 = sys.argv[6]
+    main()  
+
 
 
 
