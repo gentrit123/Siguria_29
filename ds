@@ -536,4 +536,14 @@ def token(parametri_1):
   print(token)
 
 
+#Me ane te ketij funksioni e bejme nenshkrimin e tokenit me ane te qelsit privat te shfrytezuesit.
+def signature(parametri_1,parametri_2):
+  msg = b'str(parametri_1)'
+  n = found_n(parametri_2)
+  d = found_d(parametri_2)
+  hash = int.from_bytes(sha512(msg).digest(), byteorder='big')
+  #print("qe 1")
+  signature = pow(hash, d, n)
+  #print(signature)
+  return (hash, signature)
 
