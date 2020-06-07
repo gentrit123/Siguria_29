@@ -94,3 +94,8 @@ Komanden e japin ne formen "delete-user shfrytzuesi".
 Permes kesaj komande testohet qifti pra shfrytzuesi dhe fjalekalimi neseqoftese eshte gjithqka ne rregull leshohet tokeni i nenshkruar i cili pra perdoret per autentikimin e shfrytzuesit , ky token duhet te  kete jetegjatesine 20 minuta.  
 Per nenshkrim te tokenit duhet te perdoret qelesi privat i shrytzuesit , ndersa per vertetim qelesi publik i shfrytzuesit.
 ![](images/login_.PNG)
+
+## Komanda status
+Permes kesaj komande ne marim informacione sa i perket tokenit , ne qoftese tokeni ka skaduar pra nuk ka nenshkrim valid ose nuk ekziston shfrytzuesi ,  atehere ne kete rast tokeni nuk konsiderohet valid.  
+Komanda jepet ne formen "ds status <token>".
+
