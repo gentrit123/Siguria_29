@@ -76,3 +76,17 @@ Ekzekutimi i kesaj komande behet p.sh "write-message emri mesazhi file " , ku em
 ## Komanda read-message
 Komanda read-message , e mer mesazhin e enkriptuar dhe ate mesazh e dekripton dhe e paraqet mesazhin e dekriptuar.  
 Per ekzekutim kemi p.sh "read-message encrypted-message" , ku encrypted-message paraqet mesazhin e enkriptuar.
+
+# Faza e trete 
+## Komanda create-user
+Kjo komande eshte vazhdime komandes paraprake ne fazen e dyte,ne kete rast kur krijohet shfrytzuesi duhet te japim nje fjalekalim i cili duhet dhene permes inputit , fjalekalimi duhet te kete se paku 6 karaktere dhe nje numer ose simbol.  
+Pastaj ai shfrytezues duhet ruajtur ne nje fajll ose DBMS ,  se bashku me fjalekalimin i cili duhet te jete i siguruar permes hash algoritmeve edhe salting.
+
+
+## Komanda delete-user
+Edhe kjo komande eshte vazhdim i fazes se dyte, kur  e therrasim kete komande atehere me ane te kesaj komande duhet te jemi ne gjendje te bejme fshirjen e te gjitha te dhenave atu ku i kemi ruajtur permes komandes create-user , qofte ne file ose ne ndonje DBMS.  
+Komanden e japin ne formen "delete-user shfrytzuesi".
+
+## Komanda login
+Permes kesaj komande testohet qifti pra shfrytzuesi dhe fjalekalimi neseqoftese eshte gjithqka ne rregull leshohet tokeni i nenshkruar i cili pra perdoret per autentikimin e shfrytzuesit , ky token duhet te  kete jetegjatesine 20 minuta.  
+Per nenshkrim te tokenit duhet te perdoret qelesi privat i shrytzuesit , ndersa per vertetim qelesi publik i shfrytzuesit.
